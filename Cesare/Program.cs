@@ -10,18 +10,26 @@
                 bool t = false;
                 while (t == false)
                 {
+                    if (Parola[i] + chiave >= 26)
+                    {
+                        int diff =chiave - ( 26 - Parola[i]);
+                        Parola[i] = alfabeto[diff];
+                    }
                     if (Parola[i] == alfabeto[j])
                     {
                         Parola[i] = alfabeto[j + chiave];
                         t = true;
                     }
+
                        
+                    
                     j++;
                 }
             }
             
             return Parola;
         }
+        
         static void Main(string[] args)
         {
             char[] alfabeto = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
